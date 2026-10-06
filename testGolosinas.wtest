@@ -1,0 +1,297 @@
+import golosinas.*
+
+describe "Grupo de test de Bombon" {
+    test "se verifica que el precio de Bombon es 5"{
+        const bombonTest = new Bombon()
+        assert.equals(5, bombonTest.precio())
+    }
+
+    test "se verifica que el peso es 15"{
+        const bombonTest = new Bombon()
+        assert.equals(15, bombonTest.peso())
+    }
+
+    test "se verifica que su gusto es frutilla"{
+        const bombonTest = new Bombon()
+        assert.equals(frutilla, bombonTest.sabor())
+    }
+
+    test "se verifica que  es libre de gluten"{
+        const bombonTest = new Bombon()
+        assert.that(bombonTest.esLibreDeGluten())
+    }
+
+     test "se verifica que el peso de bombonTest después de recibir 2 mordiscos es de 7.8"{
+        const bombonTest = new Bombon()
+        bombonTest.recibirMordisco()
+        bombonTest.recibirMordisco()
+        assert.equals(7.8, bombonTest.peso())
+    }
+}
+
+
+describe "Grupo de test de Alfajor" {
+    test "se verifica que el precio de Alfajor es 12"{
+        const alfajorTest = new Alfajor()
+        assert.equals(12, alfajorTest.precio())
+    }
+
+    test "se verifica que el peso es 300"{
+        const alfajorTest = new Alfajor()
+        assert.equals(300, alfajorTest.peso())
+    }
+
+    test "se verifica que su gusto es chocolate"{
+        const alfajorTest = new Alfajor()
+        assert.equals(chocolate, alfajorTest.sabor())
+    }
+
+    test "se verifica que no es libre de gluten"{
+        const alfajorTest = new Alfajor()
+        assert.notThat(alfajorTest.esLibreDeGluten())
+    }
+
+    test "se verifica que el peso de Alfajor después de recibir 2 mordiscos es de 192"{
+        const alfajorTest = new Alfajor()
+        alfajorTest.recibirMordisco()
+        alfajorTest.recibirMordisco()
+        assert.equals(192, alfajorTest.peso())
+    }
+}
+
+describe "Grupo de test de Caramelo" {
+    test "se verifica que el precio de Caramelo es 1"{
+        const carameloTest = new Caramelo()
+        assert.equals(1, carameloTest.precio())
+    }
+
+    test "se verifica que el peso es 5"{
+        const carameloTest = new Caramelo()
+        assert.equals(5, carameloTest.peso())
+    }
+
+    test "se verifica que su gusto es frutilla"{
+        const carameloTest = new Caramelo()
+        assert.equals(frutilla, carameloTest.sabor())
+    }
+
+    test "se verifica que  es libre de gluten"{
+        const carameloTest = new Caramelo()
+        assert.that(carameloTest.esLibreDeGluten())
+    }
+
+    test "se verifica que el peso de Caramelo después de recibir 2 mordiscos es de 3"{
+        const carameloTest = new Caramelo()
+        carameloTest.recibirMordisco()
+        carameloTest.recibirMordisco()
+        assert.equals(3, carameloTest.peso())
+    }
+}
+
+describe "Grupo de test de Chupetin" {
+    test "se verifica que el precio de Chupetin es 2"{
+        const chupetinTest = new Chupetin()
+        assert.equals(2, chupetinTest.precio())
+    }
+
+    test "se verifica que el peso es 7"{
+        const chupetinTest = new Chupetin()
+        assert.equals(7, chupetinTest.peso())
+    }
+
+    test "se verifica que su gusto es naranja"{
+        const chupetinTest = new Chupetin()
+        assert.equals(naranja, chupetinTest.sabor())
+    }
+
+    test "se verifica que  es libre de gluten"{
+        const chupetinTest = new Chupetin()
+        assert.that(chupetinTest.esLibreDeGluten())
+    }
+
+    test "se verifica que el peso de Chupetin después de recibir 2 mordiscos es de 5.67"{
+        const chupetinTest = new Chupetin()
+        chupetinTest.recibirMordisco()
+        chupetinTest.recibirMordisco()
+        assert.equals(5.67, chupetinTest.peso())
+    }
+}
+
+describe "Grupo de test de Oblea" {
+    test "se verifica que el precio de Oblea es 5"{
+        const obleaTest = new Oblea()
+        assert.equals(5, obleaTest.precio())
+    }
+
+    test "se verifica que el peso es 250"{
+        const obleaTest = new Oblea()
+        assert.equals(250, obleaTest.peso())
+    }
+
+    test "se verifica que su gusto es vainilla"{
+        const obleaTest = new Oblea()
+        assert.equals(vainilla, obleaTest.sabor())
+    }
+
+    test "se verifica que no es libre de gluten"{
+        const obleaTest = new Oblea()
+        assert.notThat(obleaTest.esLibreDeGluten())
+    }
+
+    test "se verifica que el peso de Oblea después de recibir 2 mordiscos es de 46.875"{
+        const obleaTest = new Oblea()
+        obleaTest.recibirMordisco()
+        obleaTest.recibirMordisco()
+        obleaTest.recibirMordisco()
+        assert.equals(46.875, obleaTest.peso())
+    }
+}
+
+describe "Grupo de test de Chocolatin" {
+    test "se verifica que el precio de Chocolatin con peso inicial 40 es 20"{
+        const obleaTest = new Chocolatin(pesoInicial=40)
+        assert.equals(20, obleaTest.precio())
+    }
+
+    test "se verifica que el precio de Chocolatin con peso inicial 100 es 50"{
+        const obleaTest = new Chocolatin(pesoInicial=100)
+        assert.equals(50, obleaTest.precio())
+    }
+
+    test "se verifica que el peso es 100"{
+        const obleaTest = new Chocolatin(pesoInicial=100)
+        assert.equals(100, obleaTest.peso())
+    }
+
+    test "se verifica que su gusto es chocolate"{
+        const obleaTest = new Chocolatin(pesoInicial=40)
+        assert.equals(chocolate, obleaTest.sabor())
+    }
+
+    test "se verifica que no es libre de gluten"{
+        const obleaTest = new Chocolatin(pesoInicial=40)
+        assert.notThat(obleaTest.esLibreDeGluten())
+    }
+}
+
+describe "Grupo de test de Pastilla Tutti-frutti" {
+    test "se verifica que el precio de PastillaTuttiFrutti es 7 cuando es libre de gluten"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=true)
+        assert.equals(7, pastillaTuttiFruttiTest.precio())
+    }
+
+    test "se verifica que el precio de PastillaTuttiFrutti es 10 cuando no es libre de gluten"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=false)
+        assert.equals(10, pastillaTuttiFruttiTest.precio())
+    }
+
+    test "se verifica que el peso es 5"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=true)
+        assert.equals(5, pastillaTuttiFruttiTest.peso())
+    }
+
+    test "se verifica que su gusto es chocolate"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=true)
+        assert.equals(chocolate, pastillaTuttiFruttiTest.sabor())
+    }
+
+    test "se verifica que es libre de gluten"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=true)
+        assert.that(pastillaTuttiFruttiTest.esLibreDeGluten())
+    }
+
+    test "se verifica que no es libre de gluten"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=false)
+        assert.notThat(pastillaTuttiFruttiTest.esLibreDeGluten())
+    }
+}
+
+describe "Grupo de test de Golosinabaniada golosina base PastillaTuttiFrutti" {
+    test "Se verifica que el precio de GolosinaBaniada con golosina base PastillaTuttiFrutti con gluten es 12"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=false)
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=pastillaTuttiFruttiTest)
+        assert.equals(12, golosinaBaniadaTest.precio())
+    }
+
+    test "Se verifica que el precio de GolosinaBaniada con golosina base PastillaTuttiFrutti libre de gluten es 9"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=true)
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=pastillaTuttiFruttiTest)
+        assert.equals(9, golosinaBaniadaTest.precio())
+    }
+
+    test "Se verifica que el peso de GolosinaBaniada con golosina base PastillaTuttiFrutti es 9"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=false)
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=pastillaTuttiFruttiTest)
+        assert.equals(9, golosinaBaniadaTest.peso())
+    }
+
+    test "se verifica que su gusto es frutilla"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=false)
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=pastillaTuttiFruttiTest)
+        assert.equals(chocolate, golosinaBaniadaTest.sabor())
+    }
+
+    test "se verifica que es libre de gluten cuando la pastillaTuttiFrutti lo es"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=true)
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=pastillaTuttiFruttiTest)
+        assert.that(golosinaBaniadaTest.esLibreDeGluten())
+    }
+
+    test "se verifica que no es libre de gluten cuando la pastillaTuttiFrutti no lo es"{
+        const pastillaTuttiFruttiTest = new PastillaTuttiFrutti(esLibreDeGluten=false)
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=pastillaTuttiFruttiTest)
+        assert.notThat(golosinaBaniadaTest.esLibreDeGluten())
+    }
+}
+
+describe "Grupo de test de Golosinabaniada golosina base chocolatin" {
+    test "Se verifica que el precio de GolosinaBaniada con golosina base chocolatin de peso inicial 15"{
+        const chocolatinTest = new Chocolatin(pesoInicial=15)
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=chocolatinTest)
+        assert.equals(9.5, golosinaBaniadaTest.precio())
+    }
+
+    test "Se verifica que el peso de GolosinaBaniada con golosina base chocolatin es 15"{
+        const chocolatinTest = new Chocolatin(pesoInicial=15)
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=chocolatinTest)
+        assert.equals(19, golosinaBaniadaTest.peso())
+    }
+
+    test "se verifica que su gusto es chocolate"{
+        const chocolatinTest = new Chocolatin(pesoInicial=15)
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=chocolatinTest)
+        assert.equals(chocolate, golosinaBaniadaTest.sabor())
+    }
+
+    test "se verifica que no es libre de gluten"{
+        const chocolatinTest = new Chocolatin(pesoInicial=15)
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=chocolatinTest)
+        assert.notThat(golosinaBaniadaTest.esLibreDeGluten())
+    }
+}
+
+describe "Grupo de test de Golosinabaniada golosina base chupetin" {
+    test "Se verifica que el precio de GolosinaBaniada con golosina base chocolatin es 4"{
+        const chupetinTest = new Chupetin()
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=chupetinTest)
+        assert.equals(4, golosinaBaniadaTest.precio())
+    }
+
+    test "Se verifica que el peso de GolosinaBaniada con golosina base chupetin es 11"{
+        const chupetinTest = new Chupetin()
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=chupetinTest)
+        assert.equals(11, golosinaBaniadaTest.peso())
+    }
+
+    test "se verifica que su gusto es naranja"{
+        const chupetinTest = new Chupetin()
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=chupetinTest)
+        assert.equals(naranja, golosinaBaniadaTest.sabor())
+    }
+
+    test "se verifica que es libre de gluten"{
+        const chupetinTest = new Chupetin()
+        const golosinaBaniadaTest = new GolosinaBaniada(golosinaBase=chupetinTest)
+        assert.that(golosinaBaniadaTest.esLibreDeGluten())
+    }
+}
