@@ -149,28 +149,28 @@ describe "Grupo de test de Oblea" {
 
 describe "Grupo de test de Chocolatin" {
     test "se verifica que el precio de Chocolatin con peso inicial 40 es 20"{
-        const obleaTest = new Chocolatin(pesoInicial=40)
-        assert.equals(20, obleaTest.precio())
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        assert.equals(20, chocolatinTest.precio())
     }
 
     test "se verifica que el precio de Chocolatin con peso inicial 100 es 50"{
-        const obleaTest = new Chocolatin(pesoInicial=100)
-        assert.equals(50, obleaTest.precio())
+        const chocolatinTest = new Chocolatin(pesoInicial=100)
+        assert.equals(50, chocolatinTest.precio())
     }
 
     test "se verifica que el peso es 100"{
-        const obleaTest = new Chocolatin(pesoInicial=100)
-        assert.equals(100, obleaTest.peso())
+        const chocolatinTest = new Chocolatin(pesoInicial=100)
+        assert.equals(100, chocolatinTest.peso())
     }
 
     test "se verifica que su gusto es chocolate"{
-        const obleaTest = new Chocolatin(pesoInicial=40)
-        assert.equals(chocolate, obleaTest.sabor())
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        assert.equals(chocolate, chocolatinTest.sabor())
     }
 
     test "se verifica que no es libre de gluten"{
-        const obleaTest = new Chocolatin(pesoInicial=40)
-        assert.notThat(obleaTest.esLibreDeGluten())
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        assert.notThat(chocolatinTest.esLibreDeGluten())
     }
 }
 
