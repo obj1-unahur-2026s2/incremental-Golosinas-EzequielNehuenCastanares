@@ -1,5 +1,6 @@
+import golosinas.*
 object mariano {
-    const bolsaDeGolosinas = {}
+    const bolsaDeGolosinas = []
 
     method comprar(unaGolosina){
         bolsaDeGolosinas.add(unaGolosina)
@@ -18,7 +19,7 @@ object mariano {
     }
 
     method probarGolosinas(){
-        bolsaDeGolosinas.map({g => g.recibirMordisco()})
+        bolsaDeGolosinas.forEach({g => g.recibirMordisco()})
     }
 
     method hayGolosinaSinTACC(){
@@ -30,7 +31,7 @@ object mariano {
     }
 
     method golosinaDeSabor(unSabor){
-        self.golosinasDeSabor(unSabor).asList().first()
+        return self.golosinasDeSabor(unSabor).first()
     }
 
     method golosinasDeSabor(unSabor){
@@ -38,7 +39,7 @@ object mariano {
     }
 
     method sabores(){
-        return bolsaDeGolosinas.map({g=>g.sabor()}).asList()
+        return bolsaDeGolosinas.map({g=>g.sabor()}).asSet()
     }
 
     method golosinaMasCara(){
@@ -50,7 +51,7 @@ object mariano {
     }
 
     method golosinasFaltantes(golosinasDeseadas){
-        return bolsaDeGolosinas.difference(golosinasDeseadas)
+        return bolsaDeGolosinas.asSet().difference(golosinasDeseadas.asSet())
     }
 
     method gustosFaltantes(gustosDeseados){

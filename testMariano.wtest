@@ -1,0 +1,129 @@
+import mariano.*
+import golosinas.*
+
+describe "Grupo de test de Mariano" {
+    test "Mariano compra chocolatín, caramelo y bombón y se comprueba que la cantidad de golosinas que tiene es 3" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.equals(3, mariano.cantidadDeGolosinas())
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón y se comprueba que tiene la golosina chocolatinTest" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.that(mariano.tieneLaGolosina(chocolatinTest))
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón, prueba las golosinas y se comprueba que el peso de chocolatin es 38" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        mariano.probarGolosinas()
+        assert.equals(38, chocolatinTest.peso())
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón, y se comprueba que hay golosina sin TACC" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.that(mariano.hayGolosinaSinTACC())
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón, y se comprueba que hay precios cuidados" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.that(mariano.preciosCuidados())
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón, y se comprueba que el caramelo es la primer golosina de sabor chocolate" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.equals(chocolatinTest, mariano.golosinaDeSabor(chocolate))
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón, y se comprueba que las golosinas sabor frutilla en la bolsa son carameloTest y bombonTest" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.equals([carameloTest, bombonTest], mariano.golosinasDeSabor(frutilla))
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón, y se comprueba que los sabores de las golosinas que tiene la bolsa con chocolate y frutilla" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.equals({chocolate, frutilla}, mariano.sabores())
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón, y se comprueba que la golosina más cara es chocolatinTest" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.equals(chocolatinTest, mariano.golosinaMasCara())
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón, y se comprueba que el peso de la bolsa de golosinas es de 60" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.equals(60, mariano.pesoGolosinas())
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón, se le pasa el conjunto de golosinas {alfajor, bombon, chocolatin, chupetin} y se comprueban las golosinas faltantes " {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        const alfajorTest = new Alfajor()
+        const chupetinTest = new Chupetin()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.equals({alfajorTest, chupetinTest}, mariano.golosinasFaltantes([alfajorTest, bombonTest, chocolatinTest, chupetinTest]))
+    }
+
+    test "Mariano compra chocolatín, caramelo y bombón, se le pasa el conjunto de sabores {melon, chocolate, frutilla, vainilla} y se comprueban los gustos faltantes " {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        const alfajorTest = new Alfajor()
+        const chupetinTest = new Chupetin()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        assert.equals({melon, vainilla}, mariano.gustosFaltantes([melon, chocolate, frutilla, vainilla]))
+    }
+}
