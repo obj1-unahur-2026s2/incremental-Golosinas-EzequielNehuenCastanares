@@ -127,3 +127,18 @@ describe "Grupo de test de Mariano" {
         assert.equals({melon, vainilla}, mariano.gustosFaltantes([melon, chocolate, frutilla, vainilla]))
     }
 }
+
+test "Mariano compra chocolatín, caramelo y bombón, y se comprueba que gastó 6 pesos en sabor frutilla" {
+        const chocolatinTest = new Chocolatin(pesoInicial=40)
+        const carameloTest = new Caramelo()
+        const bombonTest = new Bombon()
+        const alfajorTest = new Alfajor()
+        mariano.comprar(chocolatinTest)
+        mariano.comprar(carameloTest)
+        mariano.comprar(bombonTest)
+        mariano.comprar(alfajorTest)
+        mariano.desechar(alfajorTest)
+        assert.equals(6, mariano.gastoEn(frutilla))
+       
+    }
+
