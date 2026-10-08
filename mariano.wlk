@@ -1,6 +1,7 @@
 import golosinas.*
 object mariano {
     const bolsaDeGolosinas = []
+    const golosinasDesechadas = []
 
     method comprar(unaGolosina){
         bolsaDeGolosinas.add(unaGolosina)
@@ -8,6 +9,7 @@ object mariano {
 
     method desechar(unaGolosina){
         bolsaDeGolosinas.remove(unaGolosina)
+        golosinasDesechadas.add(unaGolosina)
     }
 
     method cantidadDeGolosinas(){
@@ -57,6 +59,33 @@ object mariano {
     method gustosFaltantes(gustosDeseados){
         return self.sabores().difference(gustosDeseados)
     }
+
+    method gastoEn(unSabor){
+        return self.golosinasDeSabor(unSabor).sum({g=>g.precio()})
+    }
+
+    method cantidadDeGolosinasSabor(unSabor){
+        return bolsaDeGolosinas.count({g=>g.sabor()==unSabor})
+    }
+
+    method saborMasPopular(){
+        var sabores = self.sabores()
+        return sabores.max({s=>self.cantidadDeGolosinasSabor(s)})
+    }
+
+    method pesoTotalSabor(unSabor){
+        return bolsaDeGolosinas.filter({g=>g.sabor()==unSabor}).sum({g=>g.peso()})
+    }
+
+    method saborMasPesado(){
+        var sabores = self.sabores()
+        return sabores.max({s=>self.pesoTotalSabor(s)})
+    }
+
+    method comproYDesecho(unaGolosina){
+        return golosinasDesechadas.contains(unaGolosina)
+    }
+
 
 }
 
